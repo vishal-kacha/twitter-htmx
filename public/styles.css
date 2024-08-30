@@ -1,0 +1,217 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #333;
+  --background-color: #f4f4f4;
+  --container-bg-color: #fff;
+  --border-color: #ddd;
+  --text-color: #555;
+  --light-text-color: #aaa;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.main {
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 20px;
+  display: grid;
+  grid-template-columns: 1.3fr 2fr 1fr;
+  justify-content: center;
+}
+
+.form-container {
+  background-color: var(--container-bg-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 500px;
+  max-height: 350px;
+  flex: 1;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 16px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #007bffcc;
+  transform: translateY(-2px);
+}
+
+button:focus {
+  outline: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--container-bg-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+h1 {
+  font-size: 28px;
+  color: var(--secondary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.tweet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tweet-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tweet-item:last-child {
+  border-bottom: none;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.tweet-content {
+  flex: 1;
+}
+
+.tweet-content h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--primary-color);
+}
+
+.tweet-content h3 a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.tweet-content h3 a:hover {
+  text-decoration: underline;
+}
+
+.tweet-content p {
+  margin: 5px 0;
+  color: var(--text-color);
+}
+
+.tweet-content small {
+  color: var(--light-text-color);
+  font-size: 14px;
+}
+
+.search-container {
+  margin-bottom: 20px;
+}
+
+.search-container input[type="search"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.results-container {
+  margin-top: 20px;
+}
+
+.result-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.result-item {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+}
+
+.result-item.user {
+  background-color: #e9f5ff;
+}
+
+.result-item.tweet {
+  background-color: #f5f9e9;
+}
+
+.user-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 2px solid var(--primary-color);
+}
+
+.tweet-content {
+  flex: 1;
+}
+
+.tweet-content p {
+  margin: 0;
+  color: var(--text-color);
+}
+
+.tweet-content small {
+  color: var(--light-text-color);
+  font-size: 14px;
+}

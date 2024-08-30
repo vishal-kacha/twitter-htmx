@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #333;
+  --background-color: #f4f4f4;
+  --container-bg-color: #fff;
+  --border-color: #ddd;
+  --text-color: #555;
+  --light-text-color: #aaa;
+  --border-radius: 8px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: var(--container-bg-color);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+.user-profile {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 3px solid var(--primary-color);
+}
+
+h1 {
+  font-size: 28px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 24px;
+  color: var(--secondary-color);
+  margin-bottom: 15px;
+}
+
+.tweet-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tweet-item {
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.tweet-item:last-child {
+  border-bottom: none;
+}
+
+.tweet-item p {
+  margin: 0 0 5px 0;
+  color: var(--text-color);
+  font-size: 16px;
+}
+
+.tweet-item small {
+  color: var(--light-text-color);
+  font-size: 14px;
+}
+
+p {
+  font-size: 16px;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: darken(var(--primary-color), 10%);
+  text-decoration: underline;
+}
+
+a:active {
+  color: darken(var(--primary-color), 20%);
+}
