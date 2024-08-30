@@ -1,0 +1,22 @@
+<h1>Search Results</h1>
+<div id="results">
+  <% if (results.length > 0) { %>
+    <ul class="result-list">
+      <% results.forEach(result => { %>
+        <li class="result-item <%= result.type %>">
+          <% if (result.type === 'user') { %>
+            <img src="<%= result.image %>" alt="<%= result.title %>" class="user-image">
+            <h3><%= result.title %></h3>
+          <% } else if (result.type === 'tweet') { %>
+            <div class="tweet-content">
+              <p><%= result.tweet %></p>
+              <small><%= new Date(result.created_at).toLocaleString() %></small>
+            </div>
+          <% } %>
+        </li>
+      <% }) %>
+    </ul>
+  <% } else { %>
+    <p>No results found.</p>
+  <% } %>
+</div>

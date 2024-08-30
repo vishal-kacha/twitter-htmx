@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Tweets</h1>
+    <ul class="tweet-list">
+        <% rows.forEach(tweet => { %>
+            <li class="tweet-item">
+                <img src="<%= tweet.image %>" alt="<%= tweet.name %>" class="user-image">
+                <div class="tweet-content">
+                    <h3><a href="/<%= tweet.name %>"><%= tweet.name %></a></h3>
+                    <p><%= tweet.tweet %></p>
+                    <small><%= new Date(tweet.created_at).toLocaleString() %></small>
+                </div>
+            </li>
+        <% }) %>
+    </ul>
+</div>

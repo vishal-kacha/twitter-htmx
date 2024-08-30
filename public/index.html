@@ -1,14 +1,43 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tweet Form</title>
-    <link href="/styles.css" rel="stylesheet" />
-    <script src="/htmx.js"></script>
-  </head>
 
-  <body>
-    <div class="main"></div>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tweet Form</title>
+  <link href="/styles.css" rel="stylesheet" />
+  <script src="/htmx.js"></script>
+</head>
+
+<body>
+  <div class="main">
+    <!-- Form Container -->
+    <div class="form-container">
+      <h2>Post a Tweet</h2>
+      <form id="tweetForm" method="POST" action="/post-tweet" hx-post="/post-tweet" hx-target="#tweetsContainer"
+        hx-swap="innerHTML">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="tweet">Tweet:</label>
+        <textarea id="tweet" name="tweet" rows="4" required></textarea>
+
+        <button type="submit">Post Tweet</button>
+      </form>
+    </div>
+
+    <div id="tweetsContainer" class="tweets-container" hx-get="/tweets" hx-trigger="load"></div>
+
+    <div id="search" class="search-container">
+      <form hx-post="/search" hx-target="#results-swap" hx-swap="innerHTML">
+        <input type="search" name="search" placeholder="Search here" required />
+        <button type="submit">Search</button>
+      </form>
+      <div id="results-swap" class="results-container">
+        <!-- Search results will be loaded here -->
+      </div>
+    </div>
+  </div>
+</body>
+
 </html>

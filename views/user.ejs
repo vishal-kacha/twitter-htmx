@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details</title>
+    <link rel="stylesheet" href="/user.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-profile">
+            <img src="/<%= userData.image %>" alt="<%= userData.name %>" class="user-image">
+            <h1>
+                <%= userData.name %>
+            </h1>
+        </div>
+
+        <h2>Tweets</h2>
+        <% if (userData.tweets.length> 0) { %>
+            <ul class="tweet-list">
+                <% userData.tweets.forEach(tweet=> { %>
+                    <li class="tweet-item">
+                        <p>
+                            <%= tweet.tweet %>
+                        </p>
+                        <small>
+                            <%= new Date(tweet.created_at).toLocaleString() %>
+                        </small>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No tweets found for this user.</p>
+        <% } %>
+    </div>
+</body>
+
+</html>
